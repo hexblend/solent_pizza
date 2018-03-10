@@ -1,4 +1,4 @@
-// Self-Executing Function When Page Loads
+// Self-Executing Function When Page Loads.
 (function() {
-  console.log("JS loaded!");
+  console.log("Javascript up and working!");
 })();
