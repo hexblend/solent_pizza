@@ -1,11 +1,41 @@
 /* G E N E R A L   S E T T I N G S */
+* {
+  margin: 0;
+  padding: 0;
+}
 body {
-  background: #222;
+  background: #eee;
+  font-family: 'Dosis', sans-serif;
+  font-weight: 400;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Dancing Script', cursive;
 }
 /* ------------------------------- */
 
-
 /* L A N D I N G   P A G E */
+.schedule-bar{
+  width: 100%;
+  background: #fff;
+}
+.schedule-bar .row{
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 20px;
+}
+.schedule-bar .row p{
+  font-weight: 400;
+}
+.schedule-bar .row p #open-close-switcher{
+  font-weight: 700;
+}
+.schedule-bar .row p #date{
+  margin-right: 10px;
+  margin-left: 5px;
+}
+.schedule-bar .row p #time{
+  margin-left: 5px;
+}
 /* ----------------------- */
 
 /* O R D E R   P A G E */
