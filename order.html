@@ -1,14 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic Meta -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Page Title -->
+  <title>Solent Pizza - After original italian recipes, but with solent flavour</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700|Dosis:300,400,700" rel="stylesheet">
+
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css" type="text/css">
-  <title>Document</title>
 </head>
 <body>
+  <div class="wrapper">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <ul>
+        <li><a href="index.html">Home</a><i class="fas fa-angle-right arrow-right"></i></li>
+        <li class="active"><a href="order.html">Order</a><i class="fas fa-angle-right arrow-right"></i></li>
+        <li><a href="contact.html">Contact</a><i class="fas fa-angle-right arrow-right"></i></li>
+      </ul>
+    </div>
+    <!-- end of .sidebar  -->
 
+    <!-- Schedule Bar -->
+    <div class="schedule-bar">
+      <div class="row">
+        <p><i class="far fa-calendar-alt"></i> <span id="date"></span><i class="far fa-clock"></i> <span id="time"></span></p>
+        <p>The restaurant is now <span id="open-close-switcher"></span></p>
+      </div>
+    </div>
+    <!-- end of .schedule-bar  -->
+
+    <div class="content-wrapper">
+    </div>
+  </div>
+<!-- end of .wrapper -->
+
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  <!-- Custom JS -->
   <script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 </html>
