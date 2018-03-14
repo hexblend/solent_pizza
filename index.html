@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <!-- Page Title -->
-  <title>Solent Pizza - After original italian recipes, but with solent flavour</title>
+  <title>Solent Pizzas - After original italian recipes, but with solent flavour</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700|Dosis:300,400,700" rel="stylesheet">
@@ -18,7 +18,7 @@
 <body>
   <div class="wrapper">
     <!-- Sidebar -->
-    <div class="sidebar">
+    <div class="sidebar" id="sidebar">
       <ul>
         <li class="active"><a href="index.html">Home</a><i class="fas fa-angle-right arrow-right"></i></li>
         <li><a href="order.html">Order</a><i class="fas fa-angle-right arrow-right"></i></li>
@@ -30,18 +30,30 @@
     <!-- Schedule Bar -->
     <div class="schedule-bar">
       <div class="row">
-        <p><i class="far fa-calendar-alt"></i> <span id="date"></span><i class="far fa-clock"></i> <span id="time"></span></p>
-        <p>The restaurant is now <span id="open-close-switcher"></span></p>
+        <div class="left-side">
+          <a href="#" id="open-nav" class="open-nav"><i class="fas fa-caret-right symbol"></i></a>
+          <p><i class="far fa-calendar-alt"></i> <span id="date"></span><i class="far fa-clock"></i> <span id="time"></span></p>
+        </div>
+        <div class="right-side">
+          <p>The restaurant is now <span id="open-close-switcher"></span></p>
+        </div>
       </div>
     </div>
     <!-- end of .schedule-bar  -->
-
     <!-- Content Wrapper -->
-    <div class="content-wrapper">
-      <div class="header"></div>
+    <div class="content-wrapper" id="content-wrapper">
+      <!-- close nav btn -->
+      <a href="#" id="close-nav" class="close-nav"><i class="fas fa-caret-left symbol"></i></a>
 
-      <h2 class="main-title">Welcome to Solent Pizza</h2>
-      <p class="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div class="header">
+        <h1>Solent Pizzas</h1>
+      </div>
+
+      <div class="intro-text">
+        <span><i class="fas fa-caret-up"></i></span>
+        <h2>Welcome</h2>
+        <p>Solent Pizzas is an independent fictional pizza company who run a busy venue operating in the heart of Southampton. This is though a non-fictional website for this company. Down below you can find our Most-Wanted pizzas and if you are curious about, you can actually place a fictional order. Hopefully you're just fictionally hungry..</p>
+      </div>
 
       <!-- Most Wanted Pizzas + Types -->
       <h2 class="section-title"><i class="fas fa-star"></i>Most Wanted Pizzas</h2>
@@ -81,7 +93,7 @@
         <div class="schedule-section">
           <h2><i class="fas fa-calendar-check"></i>Schedule</h2>
           <p>Mon-Thu: <span>10:00 - 19:00</span></p>
-          <p>Fri-Sun: <span>10:00 - 00:00</span></p>
+          <p>Fri-Sun: <span>10:00 - 23:00</span></p>
         </div>
         <div class="location-section">
           <h2><i class="fas fa-location-arrow"></i>Location</h2>
@@ -93,7 +105,7 @@
       <!-- end of .bottom-page -->
 
       <div class="footer">
-        <p>Copyright &copy; <span id='footer-year'>2018<span> Solent Pizza. All rights reserved.</p>
+        <p>Copyright &copy; <span id='footer-year'><span></p>
       </div>
 
     </div>
