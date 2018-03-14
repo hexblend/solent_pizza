@@ -1,11 +1,12 @@
 // Self-Executing Function When Page Loads.
 (function() {
-  console.log('Javascript up and working!');
+  console.log('Javascript up and running!');
   var curr_hour = {}; // Globally scoped object
   function TimeNow(){
     var today = new Date();
     var h = today.getHours();
     var m = today.getMinutes();
+
     var s = today.getSeconds();
     if (h < 10){
       h = '0' + h;
@@ -27,7 +28,7 @@
         document.getElementById('open-close-switcher').style.color = 'green';
       } else {
         document.getElementById('open-close-switcher').innerHTML = 'closed';
-        document.getElementById('open-close-switcher').style.color = 'red';
+        document.getElementById('open-close-switcher').style.color = '#ce0000';
       }
     }
     open_close();

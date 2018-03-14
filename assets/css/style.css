@@ -10,13 +10,14 @@ body {
 }
 .wrapper{
   width: 100%;
-  height: 2000px;
 }
 h1,h2,h3,h4,h5,h6 {
   font-family: 'Dancing Script', cursive;
+  font-weight: 700;
 }
 
 /* Includes on every page */
+
 /* Schedule bar */
 .schedule-bar{
   width: 100%;
@@ -25,8 +26,14 @@ h1,h2,h3,h4,h5,h6 {
   position: fixed;
 }
 .schedule-bar .row{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 5px 20px;
 }
 .schedule-bar .row p{
@@ -53,22 +60,49 @@ h1,h2,h3,h4,h5,h6 {
   left: 0;
   border-top: 1px solid #ccc;
   border-right: 1px solid #ccc;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .sidebar ul {
-  margin-top: -30px;
   list-style: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 .sidebar ul li{
   border-top: 1px solid #ccc;
   text-decoration: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .sidebar ul li:last-child{
   border-bottom: 1px solid #ccc;
@@ -83,6 +117,8 @@ h1,h2,h3,h4,h5,h6 {
 }
 .sidebar ul li .arrow-right{
   margin-right: 20px;
+  -webkit-transition: .175s ease-in-out;
+  -o-transition: .175s ease-in-out;
   transition: .175s ease-in-out;
   color: rgba(0,0,0,0);
 }
@@ -91,7 +127,7 @@ h1,h2,h3,h4,h5,h6 {
    color: rgba(0,0,0,1);
 }
 .sidebar ul li.active {
-  background: red;
+  background: #ce0000;
   color: #fff;
 }
 .sidebar ul li.active .arrow-right{
@@ -101,19 +137,143 @@ h1,h2,h3,h4,h5,h6 {
 .sidebar ul li.active a{
   color: #fff;
 }
+.sidebar ul .logo{
+  background: #ce0000;
+  width: 100px;
+  height: 100px;
+}
+.sidebar ul .logo h2{
+  padding-top: 23px;
+  margin-right: 20px;
+  line-height: 30px;
+  margin-left: 23px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+/* Bottom Page */
+.content-wrapper .bottom-page{
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 -20px;
+  padding: 5px 0;
+  margin-top: 100px;
+}
+.content-wrapper .bottom-page .schedule-section h2{
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.content-wrapper .bottom-page .schedule-section .fa-calendar-check{
+  margin-right: 10px;
+}
+.content-wrapper .bottom-page .schedule-section p{
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+.content-wrapper .bottom-page .schedule-section p span{
+  font-weight: 400;
+  color: black;
+}
+.content-wrapper .bottom-page .location-section h2{
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.content-wrapper .bottom-page .location-section .fa-location-arrow{
+  margin-right: 10px;
+}
+.content-wrapper .bottom-page .location-section p{
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+/* Footer */
+.footer{
+  background: #fff;
+  margin: 0 -20px;
+  border-top: 1px solid #ccc;
+  padding: 10px 0;
+}
+.footer p{
+  text-align: center;
+}
 /* ------------------------------- */
 
 /* L A N D I N G   P A G E */
 .content-wrapper{
   padding: 40px 20px 0px 220px
 }
-.header {
+.content-wrapper .header {
   height: 250px;
   width: 100%;
   background: #fff;
   border: 1px solid #888;
-  background: url('/assets/img/header-home.jpg') no-repeat center center;
+  background: url('../img/header-home.jpg') no-repeat center center;
+  -webkit-background-size: cover;
+          background-size: cover;
+}
+.content-wrapper .main-title{
+  font-size: 2.2em;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+.description-text{
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+.content-wrapper .section-title{
+  margin-top: 100px;
+  font-size: 1.8em;
+  text-align: left;
+}
+.content-wrapper h2 .fa-star,
+.content-wrapper h2 .fa-calendar-check{
+  margin-right: 5px;
+}
+.content-wrapper h2 .fa-star{
+  color: #ce0000;
+}
+.content-wrapper .pizza-type {
+  display: flex;
+  justify-content: space-between;
+}
+.content-wrapper .pizza-type .text-side{
+  width: 65%;
+  padding-top: 80px;
+}
+.content-wrapper .pizza-type .text-side h2{
+  margin-bottom: 10px;
+  font-size: 1.8em;
+  text-align: center;
+}
+.content-wrapper .pizza-type .image-side{
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+}
+.content-wrapper .pizza-type-1 .image-side{
+  background: url('../img/pizza-type-1.jpg') no-repeat center center;
   background-size: cover;
+}
+.content-wrapper .pizza-type-2 .text-side h2{
+  text-align: left;
+}
+.content-wrapper .pizza-type-2 .image-side{
+  background: url('../img/pizza-type-2.jpg') no-repeat center center;
+  background-size: cover;
+}
+.content-wrapper .pizza-type-3 .image-side{
+  background: url('../img/pizza-type-3.jpg') no-repeat center center;
+  background-size: cover;
+}
+.devider{
+  width: 40%;
+  margin: 40px auto;
+  border: 0;
+  height: 1px;
+  background: #ccc;
 }
 /* ----------------------- */
 
