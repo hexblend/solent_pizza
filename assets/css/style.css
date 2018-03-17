@@ -7,6 +7,7 @@ body {
   background: #eee;
   font-family: 'Dosis', sans-serif;
   font-weight: 400;
+  overflow-x: hidden;
 }
 .wrapper{
   width: 100%;
@@ -71,6 +72,7 @@ h1,h2,h3,h4,h5,h6 {
   background: #fff;
   width: 200px;
   position: fixed;
+  margin-left: 0;
   top: 30px;
   bottom: 0;
   left: 0;
@@ -203,6 +205,24 @@ h1,h2,h3,h4,h5,h6 {
   margin-right: 20px;
   display: none;
 }
+/* Siderbar Overlays content instead of pushing */
+@media(max-width: 1130px){
+  .sidebar{
+    transition: 0ms;
+    margin-left: -201px;
+  }
+  .schedule-bar #open-nav{
+    display: block;
+  }
+  .content-wrapper{
+    padding: 40px 20px 0px 20px;
+  }
+  .content-wrapper #close-nav{
+    left: 171px;
+    display: block;
+    opacity: 0;
+  }
+}
 
 /* Bottom Page */
 .content-wrapper .bottom-page{
@@ -310,46 +330,19 @@ h1,h2,h3,h4,h5,h6 {
   margin-bottom: 90px;
 }
 
-/* Welcome text */
-.content-wrapper .intro-text {
-  /* border: 1px solid #888;
-  border-top: 0; */
-  margin-right: -2px;
-  padding: 30px 0;
-}
-.content-wrapper .intro-text span {
-  display: block;
-  text-align: center;
-  margin-top: -80px;
-  margin-bottom: 0px;
-}
-.content-wrapper .intro-text span .fa-caret-up{
-  color: #eee;
-  font-size: 5em;
-}
-.content-wrapper .intro-text h2{
-  font-size: 2.2em;
-  text-align: center;
-  /* margin-top: 40px; */
-  margin-bottom: 20px;
-}
-.content-wrapper .intro-text p{
-  text-align: center;
-  width: 90%;
-  margin: 0 auto;
-}
-
 /* Most Wanted Section */
 .content-wrapper .section-title{
-  margin-top: 50px;
+  margin: 40px 0 20px 0;
   font-size: 1.8em;
   text-align: left;
 }
 .content-wrapper h2 .fa-star,
-.content-wrapper h2 .fa-calendar-check{
+.content-wrapper h2 .fa-calendar-check,
+.content-wrapper h2 .fa-shipping-fast{
   margin-right: 5px;
 }
-.content-wrapper h2 .fa-star{
+.content-wrapper h2 .fa-star,
+.content-wrapper h2 .fa-shipping-fast{
   color: #ce0000;
 }
 .content-wrapper .pizza-type {
@@ -364,7 +357,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 .content-wrapper .pizza-type .text-side{
   width: 65%;
-  padding-top: 80px;
+  padding-top: 50px;
 }
 .content-wrapper .pizza-type .text-side h2{
   margin-bottom: 10px;
