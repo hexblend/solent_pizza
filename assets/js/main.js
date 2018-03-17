@@ -93,4 +93,28 @@
     });
   }
   open_close_nav();
+
+
+  // Sliding Header
+  function slidingHeader(){
+    var slide1 = document.getElementById('slide1');
+    var slide2 = document.getElementById('slide2');
+    var slide3 = document.getElementById('slide3');
+    setInterval(function(){
+      slide1.classList.add('curr_slide');
+      slide2.classList.remove('curr_slide');
+      slide3.classList.remove('curr_slide');
+    }, 5000);
+    setInterval(function(){
+      slide2.classList.add('curr_slide');
+      slide1.classList.remove('curr_slide');
+      slide3.classList.remove('curr_slide');
+    }, 10000);
+    setInterval(function(){
+      slide3.classList.add('curr_slide');
+      slide1.classList.remove('curr_slide');
+      slide2.classList.remove('curr_slide');
+    }, 15000);
+  }
+  slidingHeader();
 })();

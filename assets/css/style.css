@@ -13,6 +13,8 @@ body {
 }
 .content-wrapper{
   padding: 40px 20px 0px 220px;
+  -webkit-transition: .3s ease-in-out;
+  -o-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
 }
 .padding-without-nav{
@@ -58,6 +60,9 @@ h1,h2,h3,h4,h5,h6 {
   margin-left: 5px;
 }
 .schedule-bar .row .left-side{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -86,6 +91,8 @@ h1,h2,h3,h4,h5,h6 {
   height: auto;
   overflow-y: auto;
   overflow-x: hidden;
+  -webkit-transition: .3s ease-in-out;
+  -o-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
 }
 .sidebar ul {
@@ -165,7 +172,8 @@ h1,h2,h3,h4,h5,h6 {
 .content-wrapper #close-nav{
   background: #fff;
   border: 1px solid #ccc;
-  border-radius: 2px;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
   position: fixed;
   padding: 5px 11px;
   top: 30px;
@@ -184,7 +192,8 @@ h1,h2,h3,h4,h5,h6 {
 .schedule-bar #open-nav{
   background: #fff;
   border-right: 1px solid #ccc;
-  border-radius: 2px;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
   padding: 5px 13px;
   margin: -5px 0;
   z-index: 0;
@@ -198,8 +207,13 @@ h1,h2,h3,h4,h5,h6 {
 /* Bottom Page */
 .content-wrapper .bottom-page{
   background: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
   margin: 0 -20px;
   padding: 5px 0;
   margin-top: 100px;
@@ -244,25 +258,59 @@ h1,h2,h3,h4,h5,h6 {
 /* ------------------------------- */
 
 /* L A N D I N G   P A G E */
-.content-wrapper .header {
+
+/*  Sliding Header  */
+.content-wrapper .sliding_header {
   height: 250px;
   width: 100%;
-  background: #fff;
-  /* border: 1px solid #888;
-  border-bottom: 0; */
-  background: url('../img/header-home.jpg') no-repeat center center;
+  margin-bottom: -175px;
+}
+.content-wrapper .sliding_header ul{
+  list-style: none;
+  width: auto;
+  display: flex;
+}
+.content-wrapper .sliding_header ul .slide{
+  height: 250px;
+  width: 100%;
+  transition: 3s ease-in-out;
+}
+.content-wrapper .sliding_header ul .slide1{
+  background: url('../img/slide1.jpg') no-repeat center center;
   -webkit-background-size: cover;
           background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
-.content-wrapper .header h1{
-  font-size: 3.5em;
-  color: #fff;
-  border-bottom: 3px solid #fff;
+.content-wrapper .sliding_header ul .slide2{
+  background: url('../img/slide2.jpg') no-repeat center center;
+  -webkit-background-size: cover;
+          background-size: cover;
+}
+.content-wrapper .sliding_header ul .slide3{
+  background: url('../img/slide3.jpg') no-repeat center center;
+  -webkit-background-size: cover;
+          background-size: cover;
+}
+.content-wrapper .sliding_header ul .curr_slide{
+  display: block;
+  padding-right: 100%;
+  transition: 3s ease-in-out;
 }
 
+.page-title{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.content-wrapper h1{
+  font-size: 3.5em;
+  color: #fff;
+  background: rgba(255,255,255,0.15);
+  border: 3px solid #fff;
+  padding: 10px 30px 10px 30px;
+  margin-bottom: 90px;
+}
+
+/* Welcome text */
 .content-wrapper .intro-text {
   /* border: 1px solid #888;
   border-top: 0; */
@@ -290,6 +338,8 @@ h1,h2,h3,h4,h5,h6 {
   width: 90%;
   margin: 0 auto;
 }
+
+/* Most Wanted Section */
 .content-wrapper .section-title{
   margin-top: 50px;
   font-size: 1.8em;
@@ -303,8 +353,14 @@ h1,h2,h3,h4,h5,h6 {
   color: #ce0000;
 }
 .content-wrapper .pizza-type {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .content-wrapper .pizza-type .text-side{
   width: 65%;
@@ -318,22 +374,26 @@ h1,h2,h3,h4,h5,h6 {
 .content-wrapper .pizza-type .image-side{
   height: 300px;
   width: 300px;
-  border-radius: 50%;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
 }
 .content-wrapper .pizza-type-1 .image-side{
   background: url('../img/pizza-type-1.jpg') no-repeat center center;
-  background-size: cover;
+  -webkit-background-size: cover;
+          background-size: cover;
 }
 .content-wrapper .pizza-type-2 .text-side h2{
   text-align: left;
 }
 .content-wrapper .pizza-type-2 .image-side{
   background: url('../img/pizza-type-2.jpg') no-repeat center center;
-  background-size: cover;
+  -webkit-background-size: cover;
+          background-size: cover;
 }
 .content-wrapper .pizza-type-3 .image-side{
   background: url('../img/pizza-type-3.jpg') no-repeat center center;
-  background-size: cover;
+  -webkit-background-size: cover;
+          background-size: cover;
 }
 .devider{
   width: 40%;
