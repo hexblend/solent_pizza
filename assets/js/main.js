@@ -80,15 +80,16 @@
   // OPEN-CLOSE NAVBAR Function
   function open_close_nav(){
     document.getElementById('close-nav').addEventListener('click', function(){
-      document.getElementById('sidebar').style.marginLeft = '-201px';
+      document.getElementById('sidebar').style.marginLeft = '-100%';
       document.getElementById('content-wrapper').classList.add('padding-without-nav');
       this.style.opacity = '0';
       document.getElementById('open-nav').style.display = 'block';
+      document.getElementById('open-nav').style.opacity = '100';
     });
     document.getElementById('open-nav').addEventListener('click', function(){
       document.getElementById('sidebar').style.marginLeft = '0';
       document.getElementById('content-wrapper').classList.remove('padding-without-nav');
-      this.style.display = 'none';
+      this.style.opacity = '0';
       document.getElementById('close-nav').style.opacity = '100';
     });
   }
