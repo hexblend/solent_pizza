@@ -1,4 +1,4 @@
-// Self-Executing Function When Page Loads.
+// Self-Executing Function On Every Page.
 (function() {
   console.log('Javascript up and running!');
 
@@ -94,28 +94,70 @@
     });
   }
   open_close_nav();
-
-
-  // Sliding Header
-  function slidingHeader(){
-    var slide1 = document.getElementById('slide1');
-    var slide2 = document.getElementById('slide2');
-    var slide3 = document.getElementById('slide3');
-    setInterval(function(){
-      slide1.classList.add('curr_slide');
-      slide2.classList.remove('curr_slide');
-      slide3.classList.remove('curr_slide');
-    }, 5000);
-    setInterval(function(){
-      slide2.classList.add('curr_slide');
-      slide1.classList.remove('curr_slide');
-      slide3.classList.remove('curr_slide');
-    }, 10000);
-    setInterval(function(){
-      slide3.classList.add('curr_slide');
-      slide1.classList.remove('curr_slide');
-      slide2.classList.remove('curr_slide');
-    }, 15000);
-  }
-  slidingHeader();
 })();
+
+// Home Page Functions
+// Sliding Header
+function slidingHeader() {
+  var slide1 = document.getElementById('slide1');
+  var slide2 = document.getElementById('slide2');
+  var slide3 = document.getElementById('slide3');
+  setInterval(function () {
+    slide1.classList.add('curr_slide');
+    slide2.classList.remove('curr_slide');
+    slide3.classList.remove('curr_slide');
+  }, 5000);
+  setInterval(function () {
+    slide2.classList.add('curr_slide');
+    slide1.classList.remove('curr_slide');
+    slide3.classList.remove('curr_slide');
+  }, 10000);
+  setInterval(function () {
+    slide3.classList.add('curr_slide');
+    slide1.classList.remove('curr_slide');
+    slide2.classList.remove('curr_slide');
+  }, 15000);
+}
+
+// Order Page Functions
+// Contact Page Functions
+// Form Validation
+document.getElementById("submit").addEventListener("click", function (event) {
+  var first_name = document.getElementById('first_name').value;
+  var last_name = document.getElementById('last_name').value;
+  var email = document.getElementById('email').value;
+  var phone = document.getElementById('phone').value;
+  var message = document.getElementById('message').value;
+  var error_container = document.getElementById('error-container');
+  var error_message = document.getElementById('errorMsg');
+
+  var email_filter = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+  if (first_name == ''){
+    event.preventDefault();
+    error_container.style.display = 'block';
+    error_message.innerHTML = 'Please fill out your first name!';
+    window.scrollTo(0,0);
+  } else if (last_name == ''){
+    event.preventDefault();
+    error_container.style.display = 'block';
+    error_message.innerHTML = 'Please fill out your last name!';
+    window.scrollTo(0,0);
+  } else if (email == ''){
+    event.preventDefault();
+    error_container.style.display = 'block';
+    error_message.innerHTML = 'Please fill out your email!';
+    window.scrollTo(0,0);
+  } else if (!email_filter.test(email)) {
+    event.preventDefault();
+    error_container.style.display = 'block';
+    error_message.innerHTML = 'You have entered an invalid email format!';
+    window.scrollTo(0,0);
+  } else if (message == ''){
+    event.preventDefault();
+    error_container.style.display = 'block';
+    error_message.innerHTML = 'Please fill out your message!';
+    window.scrollTo(0,0);
+  } else {
+    console.log('Submitted');
+  }
+});

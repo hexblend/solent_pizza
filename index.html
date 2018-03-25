@@ -16,7 +16,7 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 </head>
-<body>
+<body onload="slidingHeader()">
   <div class="wrapper">
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
@@ -41,10 +41,13 @@
       </div>
     </div>
     <!-- end of .schedule-bar  -->
+
     <!-- Content Wrapper -->
-    <div class="content-wrapper" id="content-wrapper">
+    <div class="content-wrapper home-content-wrapper" id="content-wrapper">
       <!-- close nav btn -->
       <a href="#" id="close-nav" class="close-nav"><i class="fas fa-caret-left symbol"></i></a>
+
+      <!--  HEADER  -->
       <div class="sliding_header">
         <ul>
           <li class="slide slide1" id="slide1"></li>
@@ -117,11 +120,12 @@
       <div class="footer">
         <p>Copyright &copy; <span id='footer-year'></span></p>
       </div>
-
+      
     </div>
     <!-- end of .content-wrapper -->
   </div>
 <!-- end of .wrapper -->
+
 
   <!-- Font Awesome -->
   <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
