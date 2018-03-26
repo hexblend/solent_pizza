@@ -511,6 +511,25 @@ h1,h2,h3,h4,h5,h6 {
   line-height: 30px;
   font-size: 16px;
   margin-bottom: 15px;
+  float: left;
+}
+.contact-content-wrapper form .cross,
+.contact-content-wrapper form .tick {
+  color: #000;
+  display: inline;
+  width: 1%;
+  float: left;
+  margin-left: -20px;
+  margin-top: 8px;
+  z-index: 5;
+  display: none;
+  position: relative;
+}
+.contact-content-wrapper form .tick{
+  color: green;
+  margin-left: -25px;
+  display: none;
+  position: relative; 
 }
 .contact-content-wrapper form textarea{
   width: 100%;
@@ -519,8 +538,9 @@ h1,h2,h3,h4,h5,h6 {
   height: 120px;
   border: 0;
   overflow-y: auto;
-  resize: none;
   margin-bottom: 10px;
+  float:left;
+  position: relative;
 }
 .contact-content-wrapper form input:focus,
 .contact-content-wrapper form textarea:focus{
@@ -532,17 +552,19 @@ h1,h2,h3,h4,h5,h6 {
   justify-content: space-between;
 }
 .contact-content-wrapper form .row .left-side{
-  width: 49%;
+  width: 48%;
+  float:left;
 }
 .contact-content-wrapper form .row .right-side{
-  width: 49%;
+  width: 48%;
+  float: left;
 }
 
-.contact-content-wrapper form input[type=submit]{
+.contact-content-wrapper input[type=submit]{
   width: 100px;
   margin: 0 auto;
   display: block;
-  padding: 5px 5px;
+  padding: 10px 5px;
   font-size: 14px; 
   background:#fff; 
   border:0 none;
