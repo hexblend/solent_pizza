@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 </head>
 
-<body>
+<body onload="ContactForm()">
   <div class="wrapper">
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
@@ -81,7 +81,7 @@
       <div class="devider"></div>
 
       <!-- Contact Form -->
-      <form>
+      <form id="form">
         <div class="row">
           <div class="left-side">
             <p>First Name*</p>
@@ -111,15 +111,12 @@
         <span class="cross" id="message_cross"><i class="fas fa-times"></i></span>
         <span class="tick" id="message_tick"><i class="fas fa-check"></i></span>
       </form>
-
-      <input type="submit" name="submit" id="submit" value="Send">
+      <input type="submit" name="submit" id="submit" form="form" value="Send">
 
       <div class="devider"></div>
 
       <!-- Google Map -->
-      <div class="map">
-
-      </div>
+      <div id="map"></div>
 
       <!-- Bottom Page Section -->
       <div class="bottom-page">
@@ -155,7 +152,8 @@
   </div>
   <!-- end of .wrapper -->
 
-
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBV2xgoKM7tMLIKOYH690VLWMdsdgky8n8&callback=initMap" async defer></script>
   <!-- Custom JS -->
   <script src="assets/js/main.js"></script>
 </body>

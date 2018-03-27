@@ -121,6 +121,13 @@ function slidingHeader() {
 
 // Order Page Functions
 
+
+
+
+
+
+
+
 // Contact Page Functions
 // Contact Form
 var first_name = document.getElementById('first_name');
@@ -133,32 +140,33 @@ var error_message = document.getElementById('errorMsg');
 var email_filter = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
 
 // Basic Form Validation
-document.getElementById("submit").addEventListener("click", function (event) {
-  if ( (first_name.value == '') || (last_name.value == '') || (email.value == '')  || (message.value == '') ){
-    event.preventDefault();
-    error_container.style.display = 'block';
-    error_container.style.background = 'red';
-    error_message.innerHTML = 'Please fill out all the required(*) spaces!';
-    window.scrollTo(0, 0);
-    realTimeValidation();
-  } else if ( (!email_filter.test(email.value)) ){
-    event.preventDefault();
-    error_container.style.display = 'block';
-    error_container.style.background = 'red';
-    error_message.innerHTML = 'You have entered an invalid Email format!';
-    window.scrollTo(0, 0);
-    realTimeValidation();
-  } else {
-    window.scrollTo(0, 0);
-    error_container.style.display = 'block';
-    error_container.style.background = 'green';
-    error_message.innerHTML = 'Submitted!';
-  }
-});
-
+function ContactForm(){
+  document.getElementById("submit").addEventListener("click", function (event) {
+    if ((first_name.value == '') || (last_name.value == '') || (email.value == '') || (message.value == '')) {
+      event.preventDefault();
+      error_container.style.display = 'block';
+      error_container.style.background = 'red';
+      error_message.innerHTML = 'Please fill out all the required(*) spaces!';
+      window.scrollTo(0, 0);
+      realTimeValidation();
+    } else if ((!email_filter.test(email.value))) {
+      event.preventDefault();
+      error_container.style.display = 'block';
+      error_container.style.background = 'red';
+      error_message.innerHTML = 'You have entered an invalid Email format!';
+      window.scrollTo(0, 0);
+      realTimeValidation();
+    } else {
+      window.scrollTo(0, 0);
+      error_container.style.display = 'block';
+      error_container.style.background = 'green';
+      error_message.innerHTML = 'Submitted!';
+    }
+  });
+}
 // Intermediate & Advanced Real-Time Validation
-function realTimeValidation(){
-  if (first_name.value == ''){
+function realTimeValidation() {
+  if (first_name.value == '') {
     first_name.style.backgroundColor = '#ce0000';
     document.getElementById('fn_tick').style.display = 'none';
     document.getElementById('fn_cross').style.display = 'block';
@@ -176,7 +184,7 @@ function realTimeValidation(){
     document.getElementById('ln_cross').style.display = 'none';
     document.getElementById('ln_tick').style.display = 'block';
   }
-  if ( (email.value == '') || (!email_filter.test(email.value)) ){
+  if ((email.value == '') || (!email_filter.test(email.value))) {
     email.style.backgroundColor = '#ce0000';
     document.getElementById('email_tick').style.display = 'none';
     document.getElementById('email_cross').style.display = 'block';
@@ -192,6 +200,18 @@ function realTimeValidation(){
   } else {
     message.style.backgroundColor = '';
     document.getElementById('message_cross').style.display = 'none';
-    document.getElementById('message_tick').style.display = 'block';  
+    document.getElementById('message_tick').style.display = 'block';
   }
+}
+// Google Map
+function initMap() {
+  var solentpizzas = { lat: 50.907747, lng: -1.400166 };
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 15,
+    center: solentpizzas
+  });
+  var marker = new google.maps.Marker({
+    position: solentpizzas,
+    map: map
+  });
 }
