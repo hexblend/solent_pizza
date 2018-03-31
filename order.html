@@ -66,12 +66,94 @@
     <!-- end of .schedule-bar  -->
 
     <!-- Content Wrapper -->
-    <div class="content-wrapper contact-content-wrapper" id="content-wrapper">
+    <div class="content-wrapper order-content-wrapper" id="content-wrapper">
       <!-- close nav btn -->
       <a href="#" id="close-nav" class="close-nav">
         <i class="fas fa-caret-left symbol"></i>
       </a>
 
+      <h1>Order Now</h1>
+
+      <div class="devider"></div>
+
+      <div class="central-elements">
+        <form action="" name="order_form" id="order_form">
+          <div class="options-container">
+            <div class="header">
+              <p>Select your pizza base *:</p>
+            </div>
+            <div class="content">
+              <input type="radio" name="base" value="Small Base - £5" onclick="add_to_recit(this); Total_Price();">
+              <p class="size">Small<span>£5</span></p><br>
+              <input type="radio" name="base" value="Medium Base - £7.50" onclick="add_to_recit(this); Total_Price();">
+              <p class="size">Medium<span>£7.50</span></p><br>
+              <input type="radio" name="base" value="Large Base - £10.00" onclick="add_to_recit(this); Total_Price();">
+              <p class="size">Large<span>£10.00</span></p><br>
+              <input type="radio" name="base" value="Extra Large Base - £12.50" onclick="add_to_recit(this); Total_Price();">
+              <p class="size">X-Large<span>£12.50</span></p>
+            </div>
+          </div>
+
+          <div class="options-container">
+            <div class="header">
+              <p>Select one or more topping *:</p>
+            </div>
+            <div class="content">
+              <input type="checkbox" name="topping" value="Cheese Topping - £0.20" onclick="add_to_recit(this); Total_Price();">
+              <p class="size">Cheese<span>£0.20</span></p><br>
+              <input type="checkbox" name="topping" value="Mushrooms Topping - £0.40" onclick="add_to_recit(this); Total_Price();">
+              <p class="size">Mushrooms<span>£0.40</span></p><br>
+              <input type="checkbox" name="topping" value="Ham Topping - £0.50" onclick="add_to_recit(this); Total_Price();">
+              <p class="size">Ham<span>£0.50</span></p><br>
+              <input type="checkbox" name="topping" value="Anchovies Topping - £0.60" onclick="add_to_recit(this); Total_Price();">
+              <p class="size">Anchovies<span>£0.60</span></p>
+            </div>
+          </div>
+
+          <div class="options-container">
+            <div class="header">
+              <p>Extras:</p>
+            </div>
+            <div class="content">
+              <input type="checkbox" name="extra" value="Extra Chips - £1.50" onclick="add_to_recit(this); Total_Price();">
+              <p class="size">Chips<span>£1.50</span></p><br>
+
+              <input type="checkbox" name="extra" value="Extra Garlic - £2.00" onclick="add_to_recit(this); Total_Price();">
+              <p class="size">Garlic Bread<span>£2.00</span></p><br>
+            </div>
+          </div>
+
+          <div class="options-container">
+            <div class="header">
+              <p>Delivery Information</p>
+            </div>
+            <div class="content">
+              <p class="size">Address Line 1</p>
+              <input type="text" name="address" id="address"><br>
+
+              <p class="size">Post Code</p>
+              <input type="text" name="post_code" id="post_code"><br>
+            </div>
+          </div>
+        </form>
+
+        <div class="recit">
+          <div class="header">
+            <p>Order Summary</p>
+          </div>
+          <div class="content" id="recit_body">
+            <!-- Elements -->
+          </div>
+          <div class="panel-footer">
+            <div class="left">
+              <p>Total</p>
+            </div>
+            <div class="right">
+              <p id="total_price">£0.00</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <!-- Bottom Page Section -->
     <div class="bottom-page">

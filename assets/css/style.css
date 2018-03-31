@@ -486,6 +486,99 @@ h1,h2,h3,h4,h5,h6 {
 /* ----------------------- */
 
 /* O R D E R   P A G E */
+.order-content-wrapper h1{
+  margin: 20px 0;
+  font-size: 2em;
+  text-align: center;
+}
+.central-elements{
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+.order-content-wrapper form{
+  width: 30%;
+}
+.order-content-wrapper .recit{
+  border: 1px solid #ccc;
+  width: 70%;
+  margin-left: 10px;
+}
+@media (max-width: 920px){
+  .order-content-wrapper form{
+    width: 50%;
+  }
+  .order-content-wrapper .recit{
+    width: 50%;
+  }
+}
+.order-content-wrapper .recit .header{
+  background: #fff;
+  text-align: center;
+  height: 7%;
+  border-bottom: 1px solid #ccc;
+}
+.order-content-wrapper .recit .header p{
+  font-size: 1.2em;
+  padding-top: 10px;
+}
+.order-content-wrapper .recit .content{
+  height: calc(87% - 17px);
+  padding: 15px 15px 0 15px;
+}
+.order-content-wrapper .recit .content p{
+  margin-bottom: 10px;
+}
+.order-content-wrapper .recit .panel-footer{
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  height: 6%;
+  line-height: 40px;
+  font-size: 1.1em;
+  border: 1px solid #ccc;
+  margin-left: -1px;
+  margin-right: -1px;
+}
+.order-content-wrapper .recit .panel-footer #total_price{
+  color: #ce0000;
+  margin-left: 10px;
+}
+.order-content-wrapper .options-container{
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+.order-content-wrapper .options-container input[type=text]{
+  margin-left: 10px;
+  outline: 0;
+  box-shadow: none;
+  line-height: 13px;
+}
+.order-content-wrapper .options-container:last-child{
+  margin-bottom: 0;
+}
+.order-content-wrapper .options-container .header{
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  padding: 5px 10px;
+}
+.order-content-wrapper .options-container .content{
+  display: inline-block;
+  padding: 15px 10px;
+}
+.order-content-wrapper .options-container .content input{
+  margin-top: -10px;
+}
+.order-content-wrapper .options-container .content .size{
+  display: inline-block;
+  margin-left: 5px;
+  margin-bottom: 10px;
+  line-height: 20px;
+}
+.order-content-wrapper .options-container .content .size span{
+  color: #ce0000;
+  margin-left: 5px;
+}
 /* ------------------- */
 
 /* C O N T A C T   P A G E */

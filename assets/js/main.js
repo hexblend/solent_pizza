@@ -100,8 +100,8 @@
 // Sliding Header
 function slidingHeader() {
   var slide1 = document.getElementById('slide1');
-  var slide2 = document.getElementById('slide2');
-  var slide3 = document.getElementById('slide3');
+      slide2 = document.getElementById('slide2');
+      slide3 = document.getElementById('slide3');
   setInterval(function () {
     slide1.classList.add('curr_slide');
     slide2.classList.remove('curr_slide');
@@ -121,23 +121,95 @@ function slidingHeader() {
 
 // Order Page Functions
 
+// Form
+var theForm = document.forms["order_form"];
+
+// Pizza Base Order
+var base_prices = new Array();
+    base_prices["Small Base - £5"] = 5;
+    base_prices["Medium Base - £7.50"] = 7.5;
+    base_prices["Large Base - £10.00"] = 10;
+    base_prices["Extra Large Base - £12.50"] = 12.5;
+function Base_Order(){
+  var base_price = 0;
+  var selected_base = theForm.elements["base"];
+  for (var i = 0; i < selected_base.length; i++){
+    if (selected_base[i].checked) {
+      base_price = base_prices[selected_base[i].value];
+      break;
+    }
+  }
+  return base_price; 
+}
+
+// Pizza Topping Order
+var topping_prices = new Array();
+    topping_prices["Cheese Topping - £0.20"] = 0.2;
+    topping_prices["Mushrooms Topping - £0.40"] = 0.4;
+    topping_prices["Ham Topping - £0.50"] = 0.5;
+    topping_prices["Anchovies Topping - £0.60"] = 0.6;
+function Topping_Order(){
+  var topping_price = 0;
+  var selected_topping = theForm.elements["topping"];
+  for (var i = 0; i< selected_topping.length; i++){
+    if (selected_topping[i].checked == true){
+      topping_price = topping_price + topping_prices[selected_topping[i].value];
+    }
+  }
+  return topping_price;
+}
+
+// Pizza Extra Order
+var extra_prices = new Array();
+    extra_prices["Extra Chips - £1.50"] = 1.5;
+    extra_prices["Extra Garlic - £2.00"] = 2;
+function Extra_Order(){
+  var extra_price = 0;
+  var selected_extra = theForm.elements["extra"];
+  for (var i = 0; i < selected_extra.length; i++){
+    if (selected_extra[i].checked == true){
+      extra_price = extra_price + extra_prices[selected_extra[i].value];
+    }
+  }
+  return extra_price;
+}
 
 
+// Add Selected Elements to the recit
+function add_to_recit(topping, extra, base) {
+  var recit = document.getElementById('recit_body');
+  if (topping.checked) {
+    var paragraph = document.createElement("P");
+    var text = document.createTextNode(topping.value);
+    paragraph.appendChild(text);
+    paragraph.classList.add('last-elem');
+    recit.appendChild(paragraph);
+  } else {
+    var items = document.querySelectorAll(".last-elem");
+    var lastchild = items[items.length - 1];
+    recit.removeChild(lastchild);
+  }
+}
 
-
-
-
+// Total Price
+function Total_Price() {
+  var base_price = Base_Order();
+      topping_price = Topping_Order();
+      extra_price = Extra_Order();
+      total_price = base_price + topping_price + extra_price;
+  document.getElementById('total_price').innerHTML = "£" + total_price.toFixed(2);
+}
 
 // Contact Page Functions
 // Contact Form
 var first_name = document.getElementById('first_name');
-var last_name = document.getElementById('last_name');
-var email = document.getElementById('email');
-var phone = document.getElementById('phone');
-var message = document.getElementById('message');
-var error_container = document.getElementById('error-container');
-var error_message = document.getElementById('errorMsg');
-var email_filter = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+    last_name = document.getElementById('last_name');
+    email = document.getElementById('email');
+    phone = document.getElementById('phone');
+    message = document.getElementById('message');
+    error_container = document.getElementById('error-container');
+    error_message = document.getElementById('errorMsg');
+    email_filter = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
 
 // Basic Form Validation
 function ContactForm(){
