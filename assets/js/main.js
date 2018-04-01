@@ -120,11 +120,10 @@ function slidingHeader() {
 }
 
 // Order Page Functions
-
 // Form
 var theForm = document.forms["order_form"];
 
-// Pizza Base Order
+// Pizza Bases Price
 var base_prices = new Array();
     base_prices["Small Base - £5"] = 5;
     base_prices["Medium Base - £7.50"] = 7.5;
@@ -142,7 +141,7 @@ function Base_Order(){
   return base_price; 
 }
 
-// Pizza Topping Order
+// Toppings Price
 var topping_prices = new Array();
     topping_prices["Cheese Topping - £0.20"] = 0.2;
     topping_prices["Mushrooms Topping - £0.40"] = 0.4;
@@ -159,7 +158,7 @@ function Topping_Order(){
   return topping_price;
 }
 
-// Pizza Extra Order
+// Extras Price
 var extra_prices = new Array();
     extra_prices["Extra Chips - £1.50"] = 1.5;
     extra_prices["Extra Garlic - £2.00"] = 2;
@@ -174,8 +173,7 @@ function Extra_Order(){
   return extra_price;
 }
 
-
-// Add Selected Elements to the recit
+// Add Selected Elements to the Summary Section
 function add_to_recit(topping, extra, base) {
   var recit = document.getElementById('recit_body');
   if (topping.checked) {
@@ -199,6 +197,55 @@ function Total_Price() {
       total_price = base_price + topping_price + extra_price;
   document.getElementById('total_price').innerHTML = "£" + total_price.toFixed(2);
 }
+
+// Order Validation
+document.getElementById('submit').addEventListener('click', function (event) {
+  var error_container = document.getElementById('error-container');
+  var error_message = document.getElementById('errorMsg');
+
+  // Display Error Function
+  function display_error() {
+    event.preventDefault();
+    error_container.style.display = 'block';
+    error_container.style.background = 'red';
+    error_message.innerHTML = '';
+    window.scrollTo(0, 0);
+  }
+
+  // Topping Checking
+  var all_toppings = theForm.elements["topping"];
+  if (!all_toppings[0].checked &&
+    !all_toppings[1].checked &&
+    !all_toppings[2].checked &&
+    !all_toppings[3].checked) {
+    // Error Displaying  
+    display_error();
+    error_message.innerHTML = 'You must select at least a pizza topping!';
+  } else {
+    window.scrollTo(0, 0);
+    error_container.style.display = 'block';
+    error_container.style.background = 'green';
+    error_message.innerHTML = 'Submitted!';
+  }
+
+  // Base Checking
+  var all_bases = theForm.elements["base"];
+  if (!all_bases[0].checked &&
+    !all_bases[1].checked &&
+    !all_bases[2].checked &&
+    !all_bases[3].checked) {
+    // Error Displaying 
+    display_error();
+    error_message.innerHTML = 'You must select at least a pizza base!';
+  }
+});
+
+// Order Reset
+document.getElementById('reset_btn').addEventListener('click', function (event) {
+  event.preventDefault();
+  theForm.reset();
+  document.getElementById('recit_body').innerHTML = '';
+});
 
 // Contact Page Functions
 // Contact Form
