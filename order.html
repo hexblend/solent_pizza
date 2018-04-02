@@ -82,19 +82,20 @@
       <div class="devider"></div>
 
       <div class="central-elements">
-        <form action="" name="order_form" id="order_form">
+        <!-- Form Starts -->
+        <form name="order_form" id="order_form">
           <div class="options-container">
             <div class="header">
               <p>Select your pizza base *:</p>
             </div>
             <div class="content">
-              <input type="radio" name="base" value="Small Base - £5" onclick="add_to_recit(this); Total_Price();">
+              <input type="radio" name="base" id="small_base" value="Small Base - £5" onclick="add_to_recit(this); Total_Price();">
               <p class="size">Small<span>£5</span></p><br>
-              <input type="radio" name="base" value="Medium Base - £7.50" onclick="add_to_recit(this); Total_Price();">
+              <input type="radio" name="base" id="medium_base" value="Medium Base - £7.50" onclick="add_to_recit(this); Total_Price();">
               <p class="size">Medium<span>£7.50</span></p><br>
-              <input type="radio" name="base" value="Large Base - £10.00" onclick="add_to_recit(this); Total_Price();">
+              <input type="radio" name="base" id="large_base" value="Large Base - £10.00" onclick="add_to_recit(this); Total_Price();">
               <p class="size">Large<span>£10.00</span></p><br>
-              <input type="radio" name="base" value="Extra Large Base - £12.50" onclick="add_to_recit(this); Total_Price();">
+              <input type="radio" name="base" id="xlarge_base" value="Extra Large Base - £12.50" onclick="add_to_recit(this); Total_Price();">
               <p class="size">X-Large<span>£12.50</span></p>
             </div>
           </div>
@@ -104,13 +105,13 @@
               <p>Select one or more topping *:</p>
             </div>
             <div class="content">
-              <input type="checkbox" name="topping" value="Cheese Topping - £0.20" onclick="add_to_recit(this); Total_Price();">
+              <input type="checkbox" name="topping" id="cheeseT" value="Cheese Topping - £0.20" onclick="add_to_recit(this); Total_Price();">
               <p class="size">Cheese<span>£0.20</span></p><br>
-              <input type="checkbox" name="topping" value="Mushrooms Topping - £0.40" onclick="add_to_recit(this); Total_Price();">
+              <input type="checkbox" name="topping" id="mushroomsT" value="Mushrooms Topping - £0.40" onclick="add_to_recit(this); Total_Price();">
               <p class="size">Mushrooms<span>£0.40</span></p><br>
-              <input type="checkbox" name="topping" value="Ham Topping - £0.50" onclick="add_to_recit(this); Total_Price();">
+              <input type="checkbox" name="topping" id="hamT" value="Ham Topping - £0.50" onclick="add_to_recit(this); Total_Price();">
               <p class="size">Ham<span>£0.50</span></p><br>
-              <input type="checkbox" name="topping" value="Anchovies Topping - £0.60" onclick="add_to_recit(this); Total_Price();">
+              <input type="checkbox" name="topping" id="anchoviesT" value="Anchovies Topping - £0.60" onclick="add_to_recit(this); Total_Price();">
               <p class="size">Anchovies<span>£0.60</span></p>
             </div>
           </div>
@@ -120,10 +121,10 @@
               <p>Extras:</p>
             </div>
             <div class="content">
-              <input type="checkbox" name="extra" value="Extra Chips - £1.50" onclick="add_to_recit(this); Total_Price();">
+              <input type="checkbox" name="extra" id="chipsE" value="Extra Chips - £1.50" onclick="add_to_recit(this); Total_Price();">
               <p class="size">Chips<span>£1.50</span></p><br>
 
-              <input type="checkbox" name="extra" value="Extra Garlic - £2.00" onclick="add_to_recit(this); Total_Price();">
+              <input type="checkbox" name="extra" id="garlicE" value="Extra Garlic - £2.00" onclick="add_to_recit(this); Total_Price();">
               <p class="size">Garlic Bread<span>£2.00</span></p><br>
             </div>
           </div>
@@ -199,7 +200,9 @@
   </div>
   <!-- end of .wrapper -->
     
-    
+  
+  <!-- Firebase Setup -->
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
 
   <!-- Custom JS -->
   <script src="assets/js/main.js"></script>
