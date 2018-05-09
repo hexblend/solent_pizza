@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 </head>
 
-<body onload="order_page();">
+<body>
   <div class="wrapper">
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
@@ -77,7 +77,11 @@
         <p id="errorMsg"></p>
       </div>
 
-      <h1>Order Now</h1>
+      <h1 id="webtitle">Welcome</h1>
+      <div class="buttons-area">
+        <a href="#" id="orders_btn">View your orders</a>
+        <a href="#" id="logout_btn" onclick="logout();">Log Out</a>
+      </div>
 
       <div class="devider"></div>
 
@@ -164,7 +168,6 @@
           </div>
         </div>
       </div>
-      
 
     <!-- Bottom Page Section -->
     <div class="bottom-page">
@@ -201,13 +204,16 @@
   <!-- end of .wrapper -->
     
   
-  <!-- Firebase Setup -->
+  <!-- Firebase-->
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-  <script>
 
-  </script>
+  <!-- Add Orders to Firebase -->
+  <script src="assets/js/add_to_firebase.js"></script>
 
   <!-- Custom JS -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+  </script>
 </body>
 </html>

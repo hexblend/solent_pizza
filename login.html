@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Page Title -->
+    <title>Solent Pizzas - After original italian recipes, but with solent flavour</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,700" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S"
+        crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+</head>
+<body class="login-body">
+
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                    <i class="fas fa-angle-right arrow-right"></i>
+                </li>
+                <li class="active">
+                    <a href="order.html">Order</a>
+                    <i class="fas fa-angle-right arrow-right"></i>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                    <i class="fas fa-angle-right arrow-right"></i>
+                </li>
+            </ul>
+        </div>
+        <!-- end of .sidebar  -->
+
+        <!-- Content Wrapper -->
+        <div class="content-wrapper login-content-wrapper">
+            <h1 class="login-title">Log In to Order</h1>
+            <hr class="devider">
+            <div id="firebaseui-auth-container"></div>
+            <div id="loader">Loading...</div>
+            <hr class="devider">
+            <h2>Or go back to our <a href="index.html">Home Page</a></h2>
+        </div>
+    </div>  
+    <!-- end of .wrapper  -->
+
+    <!-- Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    
+    <!-- Firebase UI -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
+
+    <!-- Firebase Login Init -->
+    <script src="assets/js/firebase_login.js"></script>
+</body>
+</html>

@@ -597,14 +597,39 @@ h1,h2,h3,h4,h5,h6 {
   margin-right: 3px;
 
 }
-.order-content-wrapper #reset_btn{
+.order-content-wrapper #reset_btn,
+.order-content-wrapper #logout_btn,
+.order-content-wrapper #orders_btn{
   text-decoration: none;
   color: #000;
   border: 1px solid #ccc;
   background: #fff;
   font-size: 1em;
   padding: 10px 15px;
+}
+.order-content-wrapper #logout_btn{
+  margin-left: 5px;
+}
 
+/* L O G   I N   P A G E */
+.login-body .login-title{
+  text-align: center;
+  margin-bottom: 30px;
+}
+.login-body .sidebar{
+  top: 0
+}
+.login-body h2{
+  font-family: 'Dosis', sans-serif;
+  font-weight: 400;
+  font-size: 1.2em;
+  text-align: center;
+}
+.login-body h2 a{
+  color: black;
+}
+.login-body h2 a:hover{
+  color: #ce0000;
 }
 /* ------------------- */
 
