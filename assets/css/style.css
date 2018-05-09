@@ -611,6 +611,61 @@ h1,h2,h3,h4,h5,h6 {
   margin-left: 5px;
 }
 
+/* MODAL */
+.modal{
+  position: fixed;
+  top: 0; bottom: 0; left: 0; right: 0;
+  background: rgba(206,0,0,97);
+  z-index: 10;
+  display: none;
+  -webkit-transition: .3s ease-in-out;
+  -o-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  overflow: auto;
+  text-align: center;
+}
+.modal span{
+  font-size: 3em;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  height: 70px;
+  width: 70px;
+  border: 1px solid #000;
+  border-radius: 10px;
+}
+.modal span:hover{
+  cursor: pointer;
+}
+.modal p {
+  margin-top: 50px;
+  font-size: 2.65em;
+}
+@media (max-width: 920px){
+  .modal span{
+    position: relative;
+    display: block;
+    right: 0;
+    margin: 0 auto;
+  }
+}
+.modal div{
+  overflow-x: auto;
+}
+.modal div table{
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 90%;
+  border: 1px solid #000;
+  border-collapse: collapse;
+}
+.modal div table th,
+.modal div table td{
+  border: 1px solid black;
+}
+.modal div table th:last-child{
+  border-right: 0;
+}
 /* L O G   I N   P A G E */
 .login-body .login-title{
   text-align: center;

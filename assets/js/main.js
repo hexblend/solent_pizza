@@ -268,6 +268,17 @@ function logout() {
   firebase.auth().signOut();
 }
 
+// Modal Open-Close
+function open_modal(){
+  document.getElementById('overlay').style.display = "block";
+  document.getElementById('order-body').style.overflowY = "hidden";
+}
+function close_modal(){
+  document.getElementById('overlay').style.display = "none";
+  document.getElementById('order-body').style.overflowY = "scroll";
+}
+
+
 // Contact Page Functions
 // Contact Form
 var first_name = document.getElementById('first_name');

@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 </head>
 
-<body>
+<body id="order-body">
   <div class="wrapper">
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
@@ -77,9 +77,9 @@
         <p id="errorMsg"></p>
       </div>
 
-      <h1 id="webtitle">Welcome</h1>
+      <h1 id="webtitle">Order Now</h1>
       <div class="buttons-area">
-        <a href="#" id="orders_btn">View your orders</a>
+        <a href="#" id="orders_btn" onclick="open_modal();">View your orders</a>
         <a href="#" id="logout_btn" onclick="logout();">Log Out</a>
       </div>
 
@@ -202,6 +202,53 @@
     
   </div>
   <!-- end of .wrapper -->
+
+
+  <!-- Orders Modal -->
+  <div class="modal" id="overlay">
+    <span onclick="close_modal();">&times;</span>
+    <p>Your Orders</p>
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Small Base</th>
+            <th>Medium Base</th>
+            <th>Large Base</th>
+            <th>X-Large Base</th>
+            <th>Cheese Topping</th>
+            <th>Mushrooms Topping</th>
+            <th>Ham Topping</th>
+            <th>Anchovies Topping</th>
+            <th>Chips Extra</th>
+            <th>Garlic Bread Extra</th>
+            <th>Address Line 1</th>
+            <th>Postcode</th>
+            <th>Total Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>LC3issglZC2sCZntCsE</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Selected</td>
+            <td>Selected</td>
+            <td>Selected</td>
+            <td>Selected</td>
+            <td>Selected</td>
+            <td>Selected</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>10.2</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
     
   
   <!-- Firebase-->
