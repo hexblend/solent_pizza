@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 </head>
 
-<body>
+<body onload="order_page();">
   <div class="wrapper">
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
@@ -142,8 +142,8 @@
             </div>
           </div>
           <div class="buttons-area">
-            <input type="submit" name="submit" id="submit" form="order_form" value="Place Order">
-            <a href="#" id="reset_btn">Reset</a>
+            <input type="submit" name="submit" id="submit" onclick="order_validation(event);" form="order_form" value="Place Order">
+            <a href="#" id="reset_btn" onclick="resetFunction(event);">Reset</a>
           </div>
         </form>
 
@@ -203,6 +203,9 @@
   
   <!-- Firebase Setup -->
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script>
+
+  </script>
 
   <!-- Custom JS -->
   <script src="assets/js/main.js"></script>

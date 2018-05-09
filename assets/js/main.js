@@ -197,10 +197,11 @@ function Total_Price() {
       extra_price = Extra_Order();
       total_price = base_price + topping_price + extra_price;
   document.getElementById('total_price').innerHTML = "£" + total_price.toFixed(2);
+  return total_price;
 }
 
 // Order Validation
-document.getElementById('submit').addEventListener('click', function (event) {
+function order_validation(event) {
   var error_container = document.getElementById('error-container');
   var error_message = document.getElementById('errorMsg');
 
@@ -239,16 +240,17 @@ document.getElementById('submit').addEventListener('click', function (event) {
     display_error();
     error_message.innerHTML = 'You must select at least a pizza base!';
   }
-});
+};
 
 // Order Reset
-document.getElementById('reset_btn').addEventListener('click', function (event) {
+function resetFunction(event){
   event.preventDefault();
   theForm.reset();
   document.getElementById('recit_body').innerHTML = '';
-});
+};
 
 // SENDING FORM TO FIREBASE
+function order_page() {
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyBgJ1xaXADp-cxoGD6lMS9BvYQH_p76ZG4",
@@ -362,10 +364,11 @@ function saveFullOrder(small_base, medium_base, large_base, xlarge_base,
     'i) Extra Chips': chips_extra,
     'j) Extra Garlic': garlic_extra,
     'k) Address': address,
-    'l) Post Code': post_code
+    'l) Post Code': post_code,
+    'm) Price': '£' + total_price
   });
 }
-
+}
 // Contact Page Functions
 // Contact Form
 var first_name = document.getElementById('first_name');
