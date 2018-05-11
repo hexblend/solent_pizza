@@ -27,13 +27,13 @@ var uiConfig = {
     },
     // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
     signInFlow: 'popup',
-    signInSuccessUrl: '../order.html',
+    signInSuccessUrl: 'order.html',
     signInOptions: [
         // Leave the lines as is for the providers you want to offer your users.
         firebase.auth.GoogleAuthProvider.PROVIDER_ID
     ],
     // Terms of service url.
-    tosUrl: '../order.html'
+    tosUrl: 'order.html'
 };
 
 // The start method will wait until the DOM is loaded.
