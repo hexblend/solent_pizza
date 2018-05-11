@@ -7,6 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
   <!-- Page Title -->
   <title>Solent Pizzas - After original italian recipes, but with solent flavour</title>
 
@@ -259,8 +263,25 @@
 
   <!-- Custom JS -->
   <script src="assets/js/main.js"></script>
-
   <script>
+    // Prevent stranger to go into Order Page without login
+      var uid = null;
+      firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+          // User is signed in.
+          uid = user.uid;
+          var username = user.displayName;
+          document.getElementById('webtitle').innerHTML = 'Welcome, ' + username;
+        } else {
+          // Redirect to Login Page
+          uid = null;
+          window.location.replace("../login.html")
+        }
+      });
+      // Logout Option
+      function logout() {
+        firebase.auth().signOut();
+      }
   </script>
 </body>
 </html>

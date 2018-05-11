@@ -249,24 +249,24 @@ function resetFunction(event){
   document.getElementById('recit_body').innerHTML = '';
 };
 
-// Prevent stranger to go into Order Page without login
-var uid = null;
-firebase.auth().onAuthStateChanged(function (user) {
-  if (user) {
-    // User is signed in.
-    uid = user.uid;
-    var username = user.displayName;
-    document.getElementById('webtitle').innerHTML = 'Welcome, ' + username;
-  } else {
-    // Redirect to Login Page
-    uid = null;
-    window.location.replace("../login.html")
-  }
-});
-// Logout Option
-function logout() {
-  firebase.auth().signOut();
-}
+// // Prevent stranger to go into Order Page without login
+// var uid = null;
+// firebase.auth().onAuthStateChanged(function (user) {
+//   if (user) {
+//     // User is signed in.
+//     uid = user.uid;
+//     var username = user.displayName;
+//     document.getElementById('webtitle').innerHTML = 'Welcome, ' + username;
+//   } else {
+//     // Redirect to Login Page
+//     uid = null;
+//     window.location.replace("../login.html")
+//   }
+// });
+// // Logout Option
+// function logout() {
+//   firebase.auth().signOut();
+// }
 
 // Modal Open-Close
 function open_modal(){
