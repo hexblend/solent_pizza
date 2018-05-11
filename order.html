@@ -80,18 +80,23 @@
       <div id="error-container">
         <p id="errorMsg"></p>
       </div>
+      <!-- end of .error container -->
 
       <h1 id="webtitle">Order Now</h1>
+
+      <!-- Buttons Area -->
       <div class="buttons-area">
         <a href="#" id="orders_btn" onclick="open_modal();">View your orders</a>
         <a href="#" id="logout_btn" onclick="logout();">Log Out</a>
       </div>
+      <!-- End of .buttons-area -->
 
       <div class="devider"></div>
 
       <div class="central-elements">
         <!-- Form Starts -->
         <form name="order_form" id="order_form">
+          <!-- Pizza Base Container -->
           <div class="options-container">
             <div class="header">
               <p>Select your pizza base *:</p>
@@ -107,7 +112,9 @@
               <p class="size">X-Large<span>£12.50</span></p>
             </div>
           </div>
-
+          <!-- End of Pizza Base Container -->
+          
+          <!-- Pizza Topping Container -->
           <div class="options-container">
             <div class="header">
               <p>Select one or more topping *:</p>
@@ -123,7 +130,9 @@
               <p class="size">Anchovies<span>£0.60</span></p>
             </div>
           </div>
+          <!-- End of Pizza Topping Container -->
 
+          <!-- Pizza Extras Container -->
           <div class="options-container">
             <div class="header">
               <p>Extras:</p>
@@ -136,7 +145,9 @@
               <p class="size">Garlic Bread<span>£2.00</span></p><br>
             </div>
           </div>
+          <!-- End of Pizza Extras Container -->
 
+          <!-- Delivery Information Container -->
           <div class="options-container">
             <div class="header">
               <p>Delivery Information</p>
@@ -149,12 +160,18 @@
               <input type="text" name="post_code" id="post_code"><br>
             </div>
           </div>
+          <!-- Delivery Information Container -->
+
+          <!-- Buttons Area -->
           <div class="buttons-area">
             <input type="submit" name="submit" id="submit" onclick="order_validation(event);" form="order_form" value="Place Order">
             <a href="#" id="reset_btn" onclick="resetFunction(event);">Reset</a>
           </div>
+          <!-- End of Buttons Area -->
         </form>
+        <!-- End of Form -->
 
+        <!-- Summary Container -->
         <div class="recit">
           <div class="header">
             <p>Order Summary</p>
@@ -171,7 +188,8 @@
             </div>
           </div>
         </div>
-      </div>
+        <!-- End Of Summary Container -->
+      </div> <!-- End of Central-Elements -->
 
     <!-- Bottom Page Section -->
     <div class="bottom-page">

@@ -87,12 +87,14 @@
       <!-- Contact Form -->
       <form id="form">
         <div class="row">
+          <!-- First Name Input -->
           <div class="left-side">
             <p>First Name*</p>
             <input type="text" name="first_name" id="first_name" onchange="realTimeValidation()">
             <span class="cross" id='fn_cross'><i class="fas fa-times"></i></span>
             <span class="tick" id='fn_tick'><i class="fas fa-check"></i></span>
           </div>
+          <!-- Last Name Input -->
           <div class="right-side">
             <p>Last Name*</p>
             <input type="text" name="last_name" id="last_name" onchange="realTimeValidation()">
@@ -100,21 +102,24 @@
             <span class="tick" id='ln_tick'><i class="fas fa-check"></i></span>
           </div>
         </div>
-
+        <!-- Email Input -->
         <p>Email*</p>
         <!-- input type text on email so it can be validated using JS -->
         <input type="text" name="email" id="email" onchange="realTimeValidation()">
         <span class="cross" id="email_cross"><i class="fas fa-times"></i></span>
         <span class="tick" id="email_tick"><i class="fas fa-check"></i></span>
-
+        
+        <!-- Phone Input -->
         <p>Phone</p>
         <input type="text" name="phone" id="phone">
 
+        <!-- Message Textarea -->
         <p>Message*</p>
         <textarea name="message" id="message" onchange="realTimeValidation()"></textarea>
         <span class="cross" id="message_cross"><i class="fas fa-times"></i></span>
         <span class="tick" id="message_tick"><i class="fas fa-check"></i></span>
       </form>
+      <!-- End of Form -->
       <input type="submit" name="submit" id="submit" form="form" value="Send">
 
       <div class="devider"></div>
